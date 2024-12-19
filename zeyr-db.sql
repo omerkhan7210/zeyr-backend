@@ -24,44 +24,8 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `addresses`
---
-
-CREATE TABLE `addresses` (
-  `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `firstName` varchar(50) NOT NULL,
-  `lastName` varchar(50) NOT NULL,
-  `company` varchar(50) NOT NULL,
-  `addressLine1` varchar(255) NOT NULL,
-  `addressLine2` varchar(255) DEFAULT NULL,
-  `city` varchar(50) NOT NULL,
-  `country` varchar(50) NOT NULL,
-  `zipCode` varchar(10) NOT NULL,
-  `phone` varchar(15) NOT NULL,
-  `isDefault` tinyint(1) DEFAULT 1,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `addresses`
---
-
-INSERT INTO `addresses` (`id`, `user_id`, `email`, `firstName`, `lastName`, `company`, `addressLine1`, `addressLine2`, `city`, `country`, `zipCode`, `phone`, `isDefault`, `created_at`) VALUES
-(35, 28, 'researchmate8@gmail.com', 'Rizwan', 'Sheikh', 'Giants Solutions', 'Karachi , Pakistan', '', 'HOUSTON', 'Qatar', 'TEXAS', '+923212998045', 0, '2023-11-27 17:58:45'),
-(36, 24, 'charliechaplin565@gmail.com', 'omer', 'khan', 'gtgtr', 'gever', 'refer', 'karachi', 'Pakistan', '75300', '+924356346346', 0, '2023-12-01 15:06:55'),
-(53, 32, 'charliechaplin565@gmail.com', 'omer', 'khan', 'gtgtr', 'gever', 'refer', 'karachi', 'Pakistan', '75300', '+924356346346', 1, '2024-01-31 15:55:49'),
-(54, 23, 'omerfarooqkhan7210@gmail.com', 'omer', 'khan', 'The Royal Grill', 'Shop#G-6, sakina corner, Block 12 Gulistan-e-Johar, Karachi, Sindh', 'G-6 Sakina Corner ', 'karachi', 'Pakistan', '35700', '+923343779404', 1, '2024-01-31 18:10:41'),
-(55, 23, 'omerfarooqkhan7210@gmail.com', 'omer', 'khan', 'gtgtr', 'gever', 'refer', 'karachi', 'Pakistan', '75300', '+924356346346', 0, '2024-02-02 12:59:45'),
-(56, 23, 'omerfarooqkhan7210@gmail.com', 'omer', 'khan', 'ii', 'gnero', 'ogvnrvjnr', 'karachi', 'Pakistan', '35700', '+923343779404', 0, '2024-02-02 13:00:46');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `admins`
 --
-
 CREATE TABLE `admins` (
   `id` int(11) NOT NULL,
   `fname` varchar(30) NOT NULL,
@@ -69,7 +33,7 @@ CREATE TABLE `admins` (
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `role` varchar(40) NOT NULL,
-  `date_registered` date NOT NULL DEFAULT current_timestamp(),
+`date_registered` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `thumbnail` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -171,7 +135,7 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`_id`, `name`, `slug`, `parentId`, `thumbnail`, `createdAt`, `updatedAt`) VALUES
 (16, 'Men', 'men', NULL, '', '2024-01-27 12:07:46', '2024-02-05 11:33:29'),
 (17, 'Women', 'women', NULL, '', '2024-01-29 18:00:08', '2024-02-05 11:33:31'),
-(18, 'TEE\'S', '', 16, '', '2024-01-29 18:00:22', '2024-01-29 18:00:22');
+(18, 'TEES', '', 16, '', '2024-01-29 18:00:22', '2024-01-29 18:00:22');
 
 -- --------------------------------------------------------
 
