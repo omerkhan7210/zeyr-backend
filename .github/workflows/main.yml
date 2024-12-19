@@ -16,7 +16,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '16' # Update to your project's Node.js version
 
       - name: Install dependencies
         run: npm install
@@ -26,5 +26,5 @@ jobs:
 
       - name: Deploy to VPS
         run: |
-          rsync -avz --exclude='node_modules' ./ omer@185.97.146.100:/
-          ssh omer@185.97.146.100 "cd /zeyr-backend && npm install && pm2 restart all"
+          rsync -avz --exclude='node_modules' ./build/ root@185.97.146.100:/home/ubuntu/zeyr-backend
+          ssh omer@185.97.146.100 "cd /home/ubuntu/zeyr-backend && npm install && pm2 restart all"
