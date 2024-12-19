@@ -6,6 +6,6 @@ const pool = mysql.createConnection({
   password: 'Umerkhan@1122@',
   database: 'zeyr-custom',
 });
-
+// db
 
 export default pool;
