@@ -21,10 +21,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build project (if applicable)
-        run: npm run build
-
       - name: Deploy to VPS
         run: |
-          rsync -avz --exclude='node_modules' ./build/ root@185.97.146.100:/home/ubuntu/zeyr-backend
+          # Rsync files to the VPS
+          rsync -avz --exclude='node_modules' ./ root@185.97.146.100:/home/ubuntu/zeyr-backend
+          
+          # SSH into the VPS and restart the app
           ssh omer@185.97.146.100 "cd /home/ubuntu/zeyr-backend && npm install && pm2 restart all"
